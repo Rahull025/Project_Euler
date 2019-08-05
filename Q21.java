@@ -5,13 +5,18 @@ public class Amicable {
 	
 	public static int summation(int n)
 	{
-		int sum=0;
-		for(int i=1;i<n;i++)
+		int sum=1;
+		for(int i=2;i<=Math.sqrt(n);i++)
 		{
 			if(n%i==0)
-			sum+=i;
+			{
+				if (i==(n/i)) 
+               sum+=i; 
+             else
+               sum+=(i+n/i); 
+			}
 		}
-		return sum;
+		return (sum);
 	}
 
 	 public static boolean isAmicable(int n) {
@@ -33,3 +38,4 @@ public class Amicable {
 	}
 }
       
+    
