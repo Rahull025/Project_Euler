@@ -1,17 +1,18 @@
 import java.util.*;
 class LrgstPrime
 {
-	boolean isPrime(long n)
+	static boolean isPrime(long n)
 	{
-		int c=0;
-		for(long i=1;i<=n;i++)
+		boolean flag=true;
+		for(long i=2;i<=Math.sqrt(n);i++)
 		{
 			if(n%i==0)
 			{
-			c++;
+				flag=false;
+				break;
 			}
 		}
-		if(c==2)
+		if(flag)
 		return true;
 		else
 		return false;
@@ -19,11 +20,10 @@ class LrgstPrime
 	
 	public static void main(String args[])
 	{
-		LrgstPrime ob=new LrgstPrime();
 		long n=600851475143L;
-		for(long i=1;i<n;i++)
+		for(long i=3;i<n/2;i+=2)
 		{
-			if(n%i==0&&ob.isPrime(i)==true)
+			if(n%i==0&&isPrime(i))
 			{
 				System.out.println(i);
 					
