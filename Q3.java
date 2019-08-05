@@ -1,33 +1,34 @@
-import java.util.*;
-class LrgstPrime
+class Q3
 {
-	static boolean isPrime(long n)
+   static long smlFactor(long n)
 	{
-		boolean flag=true;
-		for(long i=2;i<=Math.sqrt(n);i++)
+		long end=(long)Math.sqrt(n);
+		for(int i=2;i<=end;i++)
 		{
 			if(n%i==0)
-			{
-				flag=false;
-				break;
-			}
+			return i;
 		}
-		if(flag)
-		return true;
-		else
-		return false;
+		return n;
+	}
+	
+	public static long calc(long n)
+	{
+		while(true)
+		{
+			long p=smlFactor(n);
+			if(p<n)
+			{
+				n/=p;
+			}
+			else 
+			return n;
+		 }
 	}
 	
 	public static void main(String args[])
 	{
 		long n=600851475143L;
-		for(long i=3;i<n/2;i+=2)
-		{
-			if(n%i==0&&isPrime(i))
-			{
-				System.out.println(i);
-					
-			}
-		}
+		System.out.println(calc(n));
+		
 	}
 }
