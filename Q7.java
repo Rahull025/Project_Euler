@@ -4,7 +4,7 @@ public class Prime
 	public static boolean isPrime(int n)
 	{
 		boolean flag=true;
-		for(int i=2;i<=Math.sqrt(n);i++)
+		for(int i=3;i<=Math.sqrt(n);i+=2)
 		{
 			if(n%i==0)
 			{
@@ -21,7 +21,7 @@ public class Prime
   
     public static int nthPrime()
     {
-    	int count=1;
+    	int count=1; // counting 2 as prime
     	for(int i=3;;i+=2)
     	{
     		if(isPrime(i))
